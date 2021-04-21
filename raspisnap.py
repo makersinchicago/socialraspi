@@ -34,16 +34,6 @@ with picamera.PiCamera() as camera:
         sleep(2)
         camera.capture(image)
         camera.stop_preview()
-        photo = open(image, 'rb')
-        response = twitter.upload_media(media=photo)
-        twitter.update_status(status=caption_text, media_ids=[response['media_id']])
-        print("Tweeter Success")
 
-if os.path.exists('config'):
-        shutil.rmtree('config')
-
-bot = Bot()
-
-bot.login(username=ig_user, password=ig_pass,)
-bot.upload_photo(image, caption=caption_text)
-print("Image Posted to Instagram")
+execfile("twitpic.py")
+execfile("igphoto.py")

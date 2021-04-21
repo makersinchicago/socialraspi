@@ -5,7 +5,9 @@ from keys import (
     consumer_key,
     consumer_secret,
     access_token,
-    access_token_secret
+    access_token_secret,
+    image,
+    caption_text
 )
 
 twitter = Twython(
@@ -15,7 +17,7 @@ twitter = Twython(
     access_token_secret
 )
 
-photo = open('IMAGE FILE.jpg', 'rb')
+photo = open(image, 'rb')
 response = twitter.upload_media(media=photo)
-twitter.update_status(status='TWEET TEXT', media_ids=[response['media_id']])
-print("Image Tweeted")
+twitter.update_status(status=caption_text, media_ids=[response['media_id']])
+print("Tweeter Success")
