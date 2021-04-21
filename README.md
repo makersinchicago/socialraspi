@@ -39,4 +39,25 @@ These scripts above do not use the raspberry pi hardware but were useful for lea
 - Kano Computer Kit Microphone
 - 10,000mAh mAh battery
 
-## keys file
+## keys.py file
+
+There is one file missing that needs to be created for storing api and login information, as well as contents of posts.
+
+    #twitter api
+    consumer_key        = '__'
+    consumer_secret     = '__'
+    access_token        = '__'
+    access_token_secret = '__'
+    
+    #instagram credentials
+    ig_user = '__'
+    ig_pass = '__'
+    
+    #facebook api
+    fb_pg_id = '__'
+    fb_access_token = '__'
+    
+    #content
+    image = "__"
+    caption_text = "__"
+    twt_image = '__'
