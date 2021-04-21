@@ -86,6 +86,8 @@ To make the display more legible, we run
 
 Configure it with UTF-8, Guess, VGA, and 16x28
 
+#cameras
+
 download this repository with
 
     git pull https://github.com/makersinchicago/socialraspi.git
