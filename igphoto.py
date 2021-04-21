@@ -5,7 +5,9 @@ import os
 from instabot import Bot
 from keys import(
     ig_user,
-    ig_pass
+    ig_pass,
+    image,
+    caption_text
 )
 
 if os.path.exists('config'):

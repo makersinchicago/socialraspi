@@ -35,5 +35,5 @@ with picamera.PiCamera() as camera:
         camera.capture(image)
         camera.stop_preview()
 
-execfile("twitpic.py")
-execfile("igphoto.py")
+import twitpic
+import igphoto
