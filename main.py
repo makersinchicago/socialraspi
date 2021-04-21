@@ -15,3 +15,31 @@ the is notified that the posts have been uploaded and the prompt is presented fo
 there is a fourth button to enable a safe shutdown, it is located near the power switch.
 
 """
+
+import os
+from picamera import PiCamera
+from time import sleep
+import picamera.array
+from gpiozero import Button
+
+from keys import (
+    image,
+)
+
+snapButton = Button(17)
+
+with picamera.PiCamera() as camera:
+        camera.resolution = (3280, 2464)
+        camera.rotation = 0
+        camera.start_preview()
+        while True:
+            if snapButton.is_pressed:
+                print("Pressed")
+                camera.capture(image)
+                camera.stop_preview()
+                import twitpic
+                import igphoto
+                camera.start_preview()
+            else:
+                print("Released")
+            sleep(.2)
