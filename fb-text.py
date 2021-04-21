@@ -2,16 +2,22 @@ import requests
 
 from keys import(
     fb_pg_id,
-    fb_access_token
+    fb_access_token,
+    twt_image
 )
 
-msg = 'MESSAGE TEXT'
-post_url = 'https://graph.facebook.com/{}/feed'.format(fb_pg_id)
+#init
+caption = 'CAPTION TEXT'
+target_url = 'https://graph.facebook.com/{}/photos'.format(fb_pg_id)
+image_location = twt_image
 
+#prep
 payload = {
-'message': msg,
+'url': image_location,
+'caption': caption,
 'access_token': fb_access_token
 }
 
-r = requests.post(post_url, data=payload)
+#executes $POST
+r = requests.post(target_url, data=payload)
 print(r.text)
