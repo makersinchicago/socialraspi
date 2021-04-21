@@ -14,7 +14,7 @@ When "record video" is pressed, the pi will record a one minute video. It will u
 
 The video is then posted on Twitter, Instagram, and Facebook Pages.
 
-### The scripts
+## The scripts
 
 **twitpic** requires api access from the twitter developers portal. It takes a locally stored image and shares it on the timeline.
 
@@ -39,9 +39,9 @@ These scripts above do not use the raspberry pi hardware but were useful for lea
 - Kano Computer Kit Microphone
 - 10,000mAh mAh battery
 
-## keys.py file
+## keys.py
 
-There is one file missing that needs to be created for storing api and login information, as well as contents of posts.
+There is one file missing that needs to be created for storing api and login information, as well as content for the posts. keys.py should be saved on the root folder and it should look like this:
 
     #twitter api
     consumer_key        = '__'
@@ -61,3 +61,29 @@ There is one file missing that needs to be created for storing api and login inf
     image = "__"
     caption_text = "__"
     twt_image = '__'
+
+## Set up
+
+### pitft
+To use the display, we use the image and code from adafruit's [Easy Install](https://learn.adafruit.com/adafruit-pitft-28-inch-resistive-touchscreen-display-raspberry-pi/easy-install-2) page for the unit.
+
+To ensure compatibility, we use the recommended [OSimage](https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-12-04/) flashed onto a sd card using the Raspberry Pi Imager.
+
+For the raspi-config, enable the camera, ssh, and start at the command line by default.
+
+Once the pi is set up, we initialize the display with the following
+
+    cd ~
+    sudo apt-get install -y git python3-pip
+    sudo pip3 install --upgrade adafruit-python-shell click==7.0
+    git clone https://github.com/adafruit/Raspberry-Pi-Installer-Scripts.git
+    cd Raspberry-Pi-Installer-Scripts
+    sudo python3 adafruit-pitft.py --display=28r --rotation=90 --install-type=fbcp
+
+To make the display more legible, we run
+    sudo dpkg-reconfigure console-setup
+Configure it with UTF-8, Guess, VGA, and 16x28
+
+download this repository with
+    git pull https://github.com/makersinchicago/socialraspi.git
+*more to come*
