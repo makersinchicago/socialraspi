@@ -81,9 +81,13 @@ Once the pi is set up, we initialize the display with the following
     sudo python3 adafruit-pitft.py --display=28r --rotation=90 --install-type=fbcp
 
 To make the display more legible, we run
+
     sudo dpkg-reconfigure console-setup
+
 Configure it with UTF-8, Guess, VGA, and 16x28
 
 download this repository with
+
     git pull https://github.com/makersinchicago/socialraspi.git
+
 *more to come*
