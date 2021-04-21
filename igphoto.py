@@ -13,6 +13,6 @@ if os.path.exists('config'):
 
 bot = Bot()
 
-bot.login(username=ig_user, password=ig_pass)
-bot.upload_photo("IMAGE_FILE.jpg", caption="CAPTION TEXT")
+bot.login(username=ig_user, password=ig_pass,)
+bot.upload_photo(image, caption=caption_text)
 print("Image Posted to Instagram")

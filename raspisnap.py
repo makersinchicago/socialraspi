@@ -39,13 +39,11 @@ with picamera.PiCamera() as camera:
         twitter.update_status(status=caption_text, media_ids=[response['media_id']])
         print("Tweeter Success")
 
-try:
-    shutil.rmtree('config')
-except OSError as e:
-    print("Error: %s : %s" % (dir_path, e.strerror))
+if os.path.exists('config'):
+        shutil.rmtree('config')
 
 bot = Bot()
 
 bot.login(username=ig_user, password=ig_pass,)
 bot.upload_photo(image, caption=caption_text)
-print("Instagram Success")
+print("Image Posted to Instagram")
