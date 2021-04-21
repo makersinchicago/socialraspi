@@ -16,6 +16,9 @@ The video is then posted on Twitter, Instagram, and Facebook Pages.
 
 ## The scripts
 
+### stored image scripts
+These five scripts below do not use the raspberry pi hardware but were useful for learning how to get things from the machine to the social networks.
+
 **twitpic** requires api access from the twitter developers portal. It takes a locally stored image and shares it on the timeline.
 
 **igphoto** uses standard login in credentials to do the same on the feed.
@@ -26,7 +29,10 @@ The video is then posted on Twitter, Instagram, and Facebook Pages.
 
 **get_twitpic** returns the url of the last image uploaded to twitter. 
 
-These scripts above do not use the raspberry pi hardware but were useful for learning how to get things from the machine to the social networks.
+### picamera scripts
+for having the camera take a picture (and later video) and post on social media.
+
+**raspisnap** takes an image using picamera and then runs code from **twitpic** and **igphoto**
 
 ## Hardware
 
