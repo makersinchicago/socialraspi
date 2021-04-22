@@ -1,12 +1,14 @@
-# socialraspi v.001
+# socialraspi v.1
  This repository is for the development of a travelling photobooth. It is intended to be accessible at public spaces but respective of social distancing when needed.
  
- This first version is aimed for use in makerspaces to allow their users to share their stories in a centralized stream. The camera is being built with the hq picamera and pitft plus in mind. There will also be four gpio buttons:
+ This first version is aimed for use in makerspaces to allow their users to share their stories in a centralized stream. The camera is being built with the hq picamera and pitft plus in mind. There will also be four gpio buttons.
  
-- Record Video
-- Play Video
-- Send Video
-- Safe Shutdown
+Currently the buttons are:
+
+- Capture and post photo
+- Capture and post video
+- N/A
+- exit()
 
 Main is the script the pi will run at boot. All other scripts are written to test functions that will be performed here. Main will wait and invite users to interact with the bot, starting with the record button.
 
@@ -32,7 +34,9 @@ These five scripts below do not use the raspberry pi hardware but were useful fo
 ### picamera scripts
 for having the camera take a picture (and later video) and post on social media.
 
-**raspisnap** takes an image using picamera and then runs code from **twitpic** and **igphoto**
+**raspisnap** takes an image using picamera and then runs **twitpic** and **igphoto**
+
+**twigvid** takes a silent video, wraps it as an MP4, and uploads it to Twitter and Instagram.
 
 ## Hardware
 
