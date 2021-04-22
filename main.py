@@ -26,7 +26,8 @@ from keys import (
     image,
 )
 
-snapButton = Button(17)
+snapButton = Button(27)
+exitButton = Button(17)
 
 with picamera.PiCamera() as camera:
         camera.resolution = (3280, 2464)
@@ -40,6 +41,8 @@ with picamera.PiCamera() as camera:
                 import twitpic
                 import igphoto
                 camera.start_preview()
+            elif exitButton.is_pressed:
+                exit()
             else:
                 print("Released")
-            sleep(.2)
+            sleep(.1)
