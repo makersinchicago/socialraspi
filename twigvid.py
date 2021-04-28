@@ -25,7 +25,7 @@ twitter = Twython(
 )
 
 video = open('/home/pi/Desktop/capture.mp4', 'rb')
-response = twitter.upload_video(media=video, media_type='video/mp4')
+response = twitter.upload_video(media=video, media_type='video/mp4', media_category='tweet_video', check_progress=True)
 twitter.update_status(status=caption_text, media_ids=[response['media_id']])
 print("Video Posted to Twitter")
 if os.path.exists('config'):
