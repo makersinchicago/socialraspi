@@ -5,7 +5,7 @@ from time import sleep
 import picamera.array
 import subprocess
 
-from instabot import Bot
+#from instabot import Bot
 import shutil
 
 from twython import Twython
@@ -36,4 +36,4 @@ with picamera.PiCamera() as camera:
         camera.stop_preview()
 
 import twitpic
-import igphoto
+#import igphoto

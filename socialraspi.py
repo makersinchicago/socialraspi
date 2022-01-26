@@ -44,7 +44,7 @@ with picamera.PiCamera() as camera:
                 camera.capture(image)
                 camera.stop_preview()
                 import twitpic
-                import igphoto
+#                import igphoto
                 camera.start_preview()
             elif vidButton.is_pressed:
                 print("vid Mode")

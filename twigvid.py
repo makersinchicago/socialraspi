@@ -3,7 +3,7 @@ import picamera.array
 import numpy as np
 import subprocess
 from twython import Twython
-from instabot import API
+#from instabot import API
 import shutil
 import os
 from keys import (
@@ -30,7 +30,7 @@ twitter.update_status(status=caption_text, media_ids=[response['media_id']])
 print("Video Posted to Twitter")
 if os.path.exists('config'):
     shutil.rmtree('config')
-thing = API()
-thing.login(username=ig_user, password=ig_pass,)
-thing.upload_video('/home/pi/Desktop/capture.mp4', caption=caption_text)
-print("Video Posted to Instagram")
+#thing = API()
+#thing.login(username=ig_user, password=ig_pass,)
+#thing.upload_video('/home/pi/Desktop/capture.mp4', caption=caption_text)
+#print("Video Posted to Instagram")

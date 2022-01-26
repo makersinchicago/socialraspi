@@ -2,6 +2,9 @@
  This repository is for the development of a travelling photobooth. It is intended to be accessible at public spaces but respective of social distancing when needed.
  
  This first version is aimed for use in makerspaces to allow their users to share their stories in a centralized stream. The camera is being built with the hq picamera and pitft plus in mind. There will also be four gpio buttons.
+
+ #Jan 25 update
+ IG functions are being removed for the time being as the functions were getting blocked by IG.
  
 Currently the buttons are:
 
@@ -68,9 +71,9 @@ There is one file missing that needs to be created for storing api and login inf
     fb_access_token = '__'
     
     #content
-    image = "__"
+    image ="/home/pi/Desktop/capture.jpg"
     caption_text = "__"
-    twt_image = '__'
+    twt_image = 'x'
 
 ## Set up
 
@@ -100,6 +103,14 @@ Configure it with UTF-8, Guess, VGA, and 16x28
 
 download this repository with
 
-    git pull https://github.com/makersinchicago/socialraspi.git
+    git clone https://github.com/makersinchicago/socialraspi.git
+
+for audio, you will need to install alsa audio with:
+
+  pip install pyalsaaudio
+
+and for muxing the audio and and video you will need to install MP4Box with
+
+sudo apt-get install gpac
 
 *more to come*
